@@ -4,8 +4,9 @@ from tkinter import *
 IMAGE_SIZE = 600
 RECURSIVE_LEVELS = 6
 
-BACKGROUND_COLOR = 'green'
+BACKGROUND_COLOR = '#00ff00'
 LINE_COLOR = 'brown'
+LINE_SCALE = 1
 
 ### Recursive function
 def XFractal(n, tam, x, y):
@@ -16,8 +17,8 @@ def XFractal(n, tam, x, y):
         y0 = y - tam/2
         y1 = y + tam/2
 
-        line1 = canvas.create_line(x0, y0, x1, y1, fill = LINE_COLOR, width = 1.5*n)
-        line2 = canvas.create_line(x0, y1, x1, y0, fill = LINE_COLOR, width = 1.5*n)
+        line1 = canvas.create_line(x0, y0, x1, y1, fill = LINE_COLOR, width = LINE_SCALE*n)
+        line2 = canvas.create_line(x0, y1, x1, y0, fill = LINE_COLOR, width = LINE_SCALE*n)
 
         XFractal(n-1, tam/2, x0, y0)
         XFractal(n-1, tam/2, x0, y1)
